@@ -15,16 +15,16 @@ end
 def get_japanese_emoticon(file_path, emoticon)
  emoticons = load_library(file_path)
  japanese_equiv = " "
-  match_emo = emoticons.keys.find do |k|
+  emoticon = emoticons.keys.find do |k|
     
     emoticons[k][:english] == emoticon
-    japanese_equiv = emoticons[k][:japanese]
+   #japanese_equiv = emoticons[k][:japanese]
   end
-  binding.pry
- if match_emo
-   return emoticons[match_emo][:japanese]
- else 
-   "Sorry, that emoticon was not found"
+  #binding.pry
+ if emoticon
+  return emoticons[emoticon][:japanese]
+else 
+  "Sorry, that emoticon was not found"
   end
 end
 
